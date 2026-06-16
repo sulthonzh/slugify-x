@@ -1,0 +1,39 @@
+{
+  "name": "slugify-x",
+  "version": "1.0.0",
+  "description": "Zero-dependency URL slug generator and string case conversion library",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "slugify-x": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test dist/index.test.js",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "slug",
+    "slugify",
+    "url",
+    "case",
+    "camelcase",
+    "snake-case",
+    "kebab-case",
+    "pascal",
+    "unicode",
+    "transliterate",
+    "zero-dependency"
+  ],
+  "author": "sulthonzh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sulthonzh/slugify-x.git"
+  }
+}
