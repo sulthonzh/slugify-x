@@ -4,6 +4,13 @@
  * @module slugify-x
  */
 
+// ─── Version ───────────────────────────────────────────────
+
+/**
+ * Current version of slugify-x.
+ */
+export const VERSION = '1.1.0';
+
 // ─── Types ───────────────────────────────────────────────
 
 export interface SlugifyOptions {
@@ -403,4 +410,5 @@ export default {
   countWords,
   isSlug,
   truncateSlug,
+  VERSION,
 };

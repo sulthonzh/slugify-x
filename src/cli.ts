@@ -3,7 +3,9 @@
  * slugify-x CLI
  */
 
-import { slugify, toCase, splitWords, isSlug, truncateSlug, CaseType } from './index';
+import { slugify, toCase, splitWords, isSlug, truncateSlug, CaseType } from './index.js';
+
+const { VERSION } = require('./index.js');
 
 const args = process.argv.slice(2);
 
@@ -69,6 +71,11 @@ function demo(): void {
 function main(): void {
   if (args.length === 0 || args[0] === '-h' || args[0] === '--help' || args[0] === 'help') {
     help();
+    return;
+  }
+
+  if (args[0] === 'version' || args[0] === '--version' || args[0] === '-V') {
+    console.log(`slugify-x v${VERSION}`);
     return;
   }
 

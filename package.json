@@ -1,6 +1,6 @@
 {
   "name": "slugify-x",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Zero-dependency URL slug generator and string case conversion library",
   "main": "dist/index.js",
   "module": "dist/index.mjs.js",
@@ -8,14 +8,27 @@
   "bin": {
     "slugify-x": "dist/cli.js"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsc",
-    "test": "node --test dist/index.test.js",
-    "prepublishOnly": "npm run build && npm test"
+    "test": "npx tsx test/index.test.ts",
+    "test:core": "node --test dist/index.test.js",
+    "prepublishOnly": "npm run build && npm run test"
   },
   "keywords": [
     "slug",
