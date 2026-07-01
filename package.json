@@ -26,7 +26,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "npx tsx test/index.test.ts",
+    "test": "node --experimental-strip-types --test test/index.test.ts",
     "test:core": "node --test dist/index.test.js",
     "prepublishOnly": "npm run build && npm run test"
   },

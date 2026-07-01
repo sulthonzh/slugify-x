@@ -18,7 +18,7 @@ import {
   countWords,
   isSlug,
   truncateSlug,
-} from '../src/index';
+} from '../src/index.ts';
 
 // ─── slugify ─────────────────────────────────────────────
 
@@ -368,7 +368,7 @@ describe('truncateSlug', () => {
 
 // ─── VERSION ───────────────────────────────────────────
 
-import { VERSION } from '../src/index';
+import { VERSION } from '../src/index.ts';
 
 describe('VERSION', () => {
   it('should export VERSION constant', () => {
@@ -385,19 +385,19 @@ describe('VERSION', () => {
 
 describe('CLI --version flag', () => {
   it('should accept --version flag', async () => {
-    const result = require('child_process').spawnSync('node', ['dist/src/cli.js', '--version'], { encoding: 'utf-8' });
+    const result = (await import('child_process')).spawnSync('node', ['dist/src/cli.js', '--version'], { encoding: 'utf-8' });
     assert.equal(result.status, 0);
     assert.match(result.stdout, /1.1.0/);
   });
 
   it('should accept -V flag', async () => {
-    const result = require('child_process').spawnSync('node', ['dist/src/cli.js', '-V'], { encoding: 'utf-8' });
+    const result = (await import('child_process')).spawnSync('node', ['dist/src/cli.js', '-V'], { encoding: 'utf-8' });
     assert.equal(result.status, 0);
     assert.match(result.stdout, /1.1.0/);
   });
 
   it('should accept version command', async () => {
-    const result = require('child_process').spawnSync('node', ['dist/src/cli.js', 'version'], { encoding: 'utf-8' });
+    const result = (await import('child_process')).spawnSync('node', ['dist/src/cli.js', 'version'], { encoding: 'utf-8' });
     assert.equal(result.status, 0);
     assert.match(result.stdout, /1.1.0/);
   });
