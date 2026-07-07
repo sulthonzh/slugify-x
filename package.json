@@ -3,15 +3,13 @@
   "version": "1.1.0",
   "description": "Zero-dependency URL slug generator and string case conversion library",
   "main": "dist/index.js",
-  "module": "dist/index.mjs.js",
   "types": "dist/index.d.ts",
   "bin": {
     "slugify-x": "dist/cli.js"
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs.js",
+      "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
@@ -27,7 +25,7 @@
   "scripts": {
     "build": "tsc",
     "test": "node --experimental-strip-types --test test/index.test.ts",
-    "test:core": "node --test dist/index.test.js",
+    "test:core": "node --test dist/test/index.test.js",
     "prepublishOnly": "npm run build && npm run test"
   },
   "keywords": [

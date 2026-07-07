@@ -3,9 +3,7 @@
  * slugify-x CLI
  */
 
-import { slugify, toCase, splitWords, isSlug, truncateSlug, CaseType } from './index.js';
-
-const { VERSION } = require('./index.js');
+import { slugify, toCase, splitWords, isSlug, truncateSlug, CaseType, VERSION } from './index.js';
 
 const args = process.argv.slice(2);
 

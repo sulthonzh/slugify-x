@@ -1,6 +1,6 @@
 # slugify-x
 
-Zero-dependency URL slug generator for Node.js. 63 tests, 100% pass rate, Unicode transliteration, 9 case conversions, full CLI — all in <5KB with zero dependencies.
+Zero-dependency URL slug generator for Node.js. **68 tests, 100% pass rate**, Unicode transliteration, 9 case conversions, full CLI — all in <5KB with zero dependencies.
 
 ## Why
 

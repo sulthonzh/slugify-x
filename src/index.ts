@@ -229,7 +229,7 @@ export function slugify(str: string, options: SlugifyOptions = {}): string {
  * Capitalize the first character of a string.
  */
 export function capitalize(str: string): string {
-  if (!str) return str;
+  if (!str || typeof str !== 'string') return str;
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
@@ -237,7 +237,7 @@ export function capitalize(str: string): string {
  * Lowercase the first character of a string.
  */
 export function uncapitalize(str: string): string {
-  if (!str) return str;
+  if (!str || typeof str !== 'string') return str;
   return str.charAt(0).toLowerCase() + str.slice(1);
 }
 
@@ -338,8 +338,8 @@ export function countWords(str: string): number {
 /**
  * Check if a string is a valid slug.
  */
-export function isSlug(str: string, separator: string = '-'): string | boolean {
-  if (!str) return false;
+export function isSlug(str: string, separator: string = '-'): boolean {
+  if (!str || typeof str !== 'string') return false;
   const escSep = separator.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(`^[a-z0-9]+(${escSep}[a-z0-9]+)*$`, 'i');
   return pattern.test(str);
