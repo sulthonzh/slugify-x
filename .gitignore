@@ -17,3 +17,25 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Build output
+build/
+
+# Environment
+.env
+.env.*
+
+# Package artifacts
+*.tgz
+
+# Coverage
+coverage/
+
+# Python (if applicable)
+__pycache__/
+.venv/
+*.egg-info/
+.mypy_cache/
+
+# TypeScript
+*.tsbuildinfo
